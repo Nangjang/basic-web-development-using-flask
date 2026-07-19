@@ -62,18 +62,16 @@
 
 <div class="container">
 
-    {% if message == "Registration successful" %}
-        <h3 style="color: green; text-align: center">{{ message }}</h3>
-    {% elif message == "Registration failed" %}
-        <h3 style="color: red; text-align: center">{{ message }}</h3>
+    {% if message != "" %}
+        <h3 style="color: {{ color }}; text-align: center">{{ message }}</h3>
     {% endif %}
 
     <h2>Login</h2>
 
-    <form>
-        <input type="email" placeholder="Email" required>
+    <form action="/perform_login" method="POST">
+        <input type="email" placeholder="Email" name="name" required>
 
-        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Password" name="password" required>
 
         <button type="submit">Login</button>
     </form>
