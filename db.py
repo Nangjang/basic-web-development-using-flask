@@ -25,3 +25,10 @@ class Database:
                     return 0
             else:
                 return 0
+
+    def get_user(self, email):
+        with open('users.json') as read_file:
+            data = json.load(read_file)
+
+            if email in data:
+                return data[email][0]

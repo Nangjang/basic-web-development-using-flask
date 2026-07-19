@@ -62,14 +62,14 @@
 
 <div class="container">
 
-    {% if message != "" %}
+    {% if message %}
         <h3 style="color: {{ color }}; text-align: center">{{ message }}</h3>
     {% endif %}
 
     <h2>Login</h2>
 
     <form action="/perform_login" method="POST">
-        <input type="email" placeholder="Email" name="name" required>
+        <input type="email" placeholder="Email" name="email" required>
 
         <input type="password" placeholder="Password" name="password" required>
 
